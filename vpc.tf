@@ -1,4 +1,4 @@
-resource "aws" {
+resource "aws_region" "us-est-2"{
   region = "us-east-2"
   }
 resource "aws_vpc" "vpc2" {
