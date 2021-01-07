@@ -4,7 +4,7 @@ resource "aws_vpc" "vpc2" {
   tags = {
     Name = "main"
   }
-  placement {
+}
+placement {
     availability_zone = "us-east-2b"
   }
-}
