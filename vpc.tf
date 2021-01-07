@@ -1,5 +1,5 @@
-data "aws_regions" "us-east-2" {
-  all_regions = false
+resource "aws.region" "us-east-2" {
+  region = "us-east-2"
 }
 resource "aws_vpc" "vpc2" {
   cidr_block       = "10.0.0.0/16"
