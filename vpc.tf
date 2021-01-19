@@ -4,7 +4,6 @@ provider "aws" {
 resource "aws_security_group" "sg" {
   name        = "sg"
   description = "Allow traffic"
-  vpc_id      = aws_vpc.vpc-bf223cd7.id
 
   ingress {
     description = "AT&T from VPC"
