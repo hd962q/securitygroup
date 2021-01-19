@@ -1,10 +1,27 @@
 provider "aws" {
  region = "us-east-2"
 }
-resource "aws_vpc" "vpc2" {
-  cidr_block       = "10.0.0.0/16"
-  instance_tenancy = "default"
+resource "aws_security_group" "sg" {
+  name        = "sg"
+  description = "Allow traffic"
+  vpc_id      = aws_vpc.vpc-bf223cd7.id
+
+  ingress {
+    description = "AT&T from VPC"
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["	144.160.0.0/16"]
+  }
+
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
   tags = {
-    Name = "main"
+    Name = "allow_traffic"
   }
 }
